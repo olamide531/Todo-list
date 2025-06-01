@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="./index.js" defer></script>
+
+</head>
+
+<body class="bg-black  ">
+    <header class="relative h-34 bg-[url('./assets/butterfly.jpeg')] bg-auto  bg-center">
+
+        <div class="absolute inset-0 bg-black/56"></div>
+
+
+        <div class="relative z-10 flex items-center justify-center h-full text-white">
+            <h1 class="text-3xl absolute bottom-3 font-bold">TO DO LIST</h1>
+        </div>
+    </header>
+
+
+    <section class="flex items-center justify-center min-h-screen ">
+        <div class="bg-white absolute top-[8rem] text-white w-full max-w-md p-6 rounded-lg shadow-lg">
+
+
+            <div id="tabs" class="flex justify-around mb-4 text-black text-sm">
+                <button class="tab-btn text-black border-b-2 border-black pb-1" data-period="Day">Day</button>
+                <button class="tab-btn" data-period="Week">Week</button>
+                <button class="tab-btn" data-period="Month">Month</button>
+                <button class="tab-btn" data-period="Year">Year</button>
+            </div>
+
+
+
+            <div class="p-4 rounded-xl text-center mb-6">
+                <div id="dayDisplay" class="text-2xl text-black font-bold mb-1">Wednesday</div>
+                <div id="dateDisplay" class="text-black text-lg mb-3">5/25/2002</div>
+                <div class="flex justify-center items-center space-x-4">
+                    <button id="prevBtn" class="text-black text-xl cursor-pointer hover:text-gray-400">&#8592;</button>
+                    <button id="nextBtn" class="text-black text-xl cursor-pointer  hover:text-gray-400">&#8594;</button>
+                </div>
+            </div>
+
+            <form id="taskForm" class="mb-4" onsubmit="return false;">
+                <input id="taskInput" type="text" placeholder="Add a task..."
+                    class="w-full bg-black text-sm text-white placeholder-white p-2 rounded outline-none" />
+            </form>
+
+            <ul id="taskList" class="space-y-2 text-sm">
+            
+            </ul>
+
+        </div>
+    </section>
+
+
+</body>
+
+</html>
