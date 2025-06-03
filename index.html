@@ -44,13 +44,22 @@
                 </div>
             </div>
 
-            <form id="taskForm" class="mb-4" onsubmit="return false;">
+
+            <div class="mb-4 relative w-full max-w-md">
                 <input id="taskInput" type="text" placeholder="Add a task..."
-                    class="w-full bg-black text-sm text-white placeholder-white p-2 rounded outline-none" />
-            </form>
+                    class="w-full bg-black text-white placeholder-white p-3 pr-20 rounded outline-none" />
+                <button id="showTasksBtn" type="button"
+                    class="absolute right-1 cursor-pointer top-1 bottom-1 bg-white text-black px-3 rounded hover:bg-gray-500 text-xs">
+                    Add
+                </button>
+            </div>
+
+            <ul id="taskList" class="space-y-2 text-sm mt-4"></ul>
+
+
 
             <ul id="taskList" class="space-y-2 text-sm">
-            
+
             </ul>
 
         </div>

@@ -4,9 +4,13 @@ const prevBtn = document.getElementById('prevBtn');
 const nextBtn = document.getElementById('nextBtn');
 
 const tabButtons = document.querySelectorAll('.tab-btn');
-const taskForm = document.getElementById('taskForm');
+
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
+const showTasksBtn = document.getElementById('showTasksBtn');
+
+
+
    
 
      let taskStore = {
@@ -139,19 +143,33 @@ const taskList = document.getElementById('taskList');
           taskList.appendChild(li);
         });
     }
+       showTasksBtn.textContent = 'Add'; 
 
-    taskForm.addEventListener('submit', () => {
-      const text = taskInput.value.trim();
-      if (!text) return;
+   
+        showTasksBtn.addEventListener('click', () => {
+         const text = taskInput.value.trim();
+        if (!text) return;
 
-      const dateKey = getDateKey(currentDate);
-      if (!taskStore[dateKey]) taskStore[dateKey] = [];
+        const dateKey = getDateKey(currentDate);
+       if (!taskStore[dateKey]) taskStore[dateKey] = [];
 
-      taskStore[dateKey].push({ text, done: false, period: currentPeriod });
+       taskStore[dateKey].push({
+        text,
+        done: false,
+        period: currentPeriod,
+        });
 
-      taskInput.value = '';
-      renderTasks();
-    });
+       taskInput.value = '';
+       taskList.style.display = 'block';
+
+  
+       showTasksBtn.textContent = 'Add';
+
+        renderTasks();
+       });
+
+   
+    
 
     
     updateCalendarDisplay();
